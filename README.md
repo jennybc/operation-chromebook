@@ -11,7 +11,7 @@
 
   * <http://platypusplatypus.com/chromebooks/play-minecraft-chromebook/>
   * <https://github.com/dnschneid/crouton>
-    * <https://github.com/dnschneid/crouton/wiki/crouton-in-a-Chromium-OS-window-%28xiwi%29>
+  * <https://github.com/dnschneid/crouton/wiki/crouton-in-a-Chromium-OS-window-%28xiwi%29>
   * <https://jwhollister.com/r/2017/04/14/chromebook-4-rstats.html>
 
 ### Live notes
