@@ -39,7 +39,7 @@ Convince self I've actually installed Ubuntu by staring an Xfce session:
 sudo startxfce4
 ```
 
-Looks good. Cycle between ChromeOS and the running chroot with Ctrl+Alt+Shift+Back and Ctrl+Alt+Shift+Forward. Note these are the arrows up with the function keys, not the ones in the lower left corner. To truly exit the chroot, log out of Xfce.
+Looks good. Cycle between ChromeOS and the running chroot with Ctrl+Alt+Shift+Back and Ctrl+Alt+Shift+Forward. Note these are the arrows up with the function keys, not the ones in the lower right corner. To truly exit the chroot, log out of Xfce.
 
 On Ubuntu, make sure everything up-to-date and install JRE:
 
