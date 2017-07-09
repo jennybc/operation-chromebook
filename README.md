@@ -7,14 +7,13 @@
   * Lenovo Chromebook N42-20 80US0000US, Intel Celeron N3060, 14" Screen, 4GB RAM, 16GB Flash Memory Capacity. Bought for $190 CDN at [Mike's Computer Shop](https://www.mikescomputershop.com/product/7619358) (special price on a single machine that someone had returned).
     - 1x for me
 
-### Links
+### Links re: Crouton and Minecraft
 
   * <http://platypusplatypus.com/chromebooks/play-minecraft-chromebook/>
   * <https://github.com/dnschneid/crouton>
-    * <https://github.com/dnschneid/crouton/wiki/crouton-in-a-Chromium-OS-window-%28xiwi%29>
-  * <https://jwhollister.com/r/2017/04/14/chromebook-4-rstats.html>
+  * <https://github.com/dnschneid/crouton/wiki/crouton-in-a-Chromium-OS-window-%28xiwi%29>
 
-### Live notes
+### Live notes for kid Chromebooks
 
 Turn thing on. Sign in with each person's Google account and connect to the network.
 
@@ -68,3 +67,68 @@ Launch it!
 <img src="img/minechrome_02.jpg" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;">
 <img src="img/minechrome_03.jpg" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;">
 <img src="img/minechrome_04.jpg" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;">
+<p style="clear: both;">
+
+### Links re: R and RStudio
+
+  * <http://www.datascienceriot.com//r/install-ubuntu16/>
+  * <https://mikewilliamson.wordpress.com/2016/11/14/installing-r-studio-on-ubuntu-16-10/>
+  * <https://jwhollister.com/r/2017/04/14/chromebook-4-rstats.html>
+
+### Live notes for Jenny Chromebook
+
+The beginning is like for kids above. But I encrypt my chroot.
+
+```sh
+sudo sh ~/Downloads/crouton -e -t xfce
+```
+
+Add RStudio CRAN repository.
+
+```sh
+sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" | sudo tee -a /etc/apt/sources.list
+```
+
+Add R to Ubuntu Keyring.
+
+```sh
+gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+gpg -a --export E084DAB9 | sudo apt-key add -
+```
+
+Install R.
+
+```sh
+sudo apt-get update
+sudo apt-get install r-base r-base-dev
+```
+
+Install old Gstreamer, because RStudio requires. Set things up so Ubuntu does not "helpfully" upgrade these.
+
+```
+wget http://ftp.ca.debian.org/debian/pool/main/g/gstreamer0.10/libgstreamer0.10-0_0.10.36-1.5_amd64.deb
+wget http://ftp.ca.debian.org/debian/pool/main/g/gst-plugins-base0.10/libgstreamer-plugins-base0.10-0_0.10.36-2_amd64.deb
+sudo dpkg -i libgstreamer0.10-0_0.10.36-1.5_amd64.deb
+sudo dpkg -i libgstreamer-plugins-base0.10-0_0.10.36-2_amd64.deb
+sudo apt-mark hold libgstreamer-plugins-base0.10-0
+sudo apt-mark hold libgstreamer0.10
+sudo apt-mark showhold
+```
+
+I found I also needed to manually install libjgeg62 and libxslt1.
+
+```sh
+sudo apt-get install libjpeg62
+sudo apt-get install libxslt1-dev
+```
+
+Download RStudio IDE daily build and install.
+
+```
+wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-1.1.299-amd64.deb
+sudo dpkg -i rstudio-1.1.299-amd64.deb
+```
+
+Launch via `rstudio`.
+
+*RStudio and R are running but from (attempted) package installation, I already know there's more to come re: installing dependencies, such as libssl-dev, libcurl4-openssl-dev. Setting locale.*
