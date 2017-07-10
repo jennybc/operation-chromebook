@@ -83,6 +83,13 @@ The beginning is like for kids above. But I encrypt my chroot.
 sudo sh ~/Downloads/crouton -e -t xfce
 ```
 
+Set locale. For the second step affirm / choose `en_US.UTF-8` at all opportunities.
+
+```sh
+sudo locale-gen "en_US.UTF-8"
+sudo dpkg-reconfigure locales
+```
+
 Add RStudio CRAN repository.
 
 ```sh
@@ -103,7 +110,7 @@ sudo apt-get update
 sudo apt-get install r-base r-base-dev
 ```
 
-Install old Gstreamer, because RStudio requires. Set things up so Ubuntu does not "helpfully" upgrade these.
+Install old Gstreamer, because RStudio requires. Set things up so Ubuntu does not "helpfully" upgrade these. Note these versions are different from those that appear in the linked posts I'm using for reference.
 
 ```
 wget http://ftp.ca.debian.org/debian/pool/main/g/gstreamer0.10/libgstreamer0.10-0_0.10.36-1.5_amd64.deb
@@ -115,14 +122,17 @@ sudo apt-mark hold libgstreamer0.10
 sudo apt-mark showhold
 ```
 
-I found I also needed to manually install libjgeg62 and libxslt1.
+You'll grdaully discover you need to manually install various libraries as you install and use more packages. So far I've done:
 
 ```sh
 sudo apt-get install libjpeg62
 sudo apt-get install libxslt1-dev
+sudo apt-get install libssl-dev
+sudo apt-get install libcurl4-openssl-dev
+sudo apt-get install libssh2-1-dev
 ```
 
-Download RStudio IDE daily build and install.
+Download RStudio IDE daily build and install. This version number will be a moving target, so go to the [download page for the dailies](https://dailies.rstudio.com) to see what's the latest (just look at the line of buttons across the top).
 
 ```
 wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-1.1.299-amd64.deb
@@ -130,5 +140,3 @@ sudo dpkg -i rstudio-1.1.299-amd64.deb
 ```
 
 Launch via `rstudio`.
-
-*RStudio and R are running but from (attempted) package installation, I already know there's more to come re: installing dependencies, such as libssl-dev, libcurl4-openssl-dev. Setting locale.*
