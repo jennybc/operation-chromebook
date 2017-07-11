@@ -1,5 +1,7 @@
 # operation-chromebook
 
+How I set up some Chromebooks for Minecraft and light R use.
+
 ### Hardware
 
   * HP Chromebook 11 G4 EE: Intel Celeron N2840 Dual Core, 11.6" Screen, 4GB RAM, 16GB Internal Storage. Bought for $210 CDN each at [Mike's Computer Shop](https://www.mikescomputershop.com/product/6961387).
