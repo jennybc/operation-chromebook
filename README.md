@@ -124,7 +124,7 @@ sudo apt-mark hold libgstreamer0.10
 sudo apt-mark showhold
 ```
 
-You'll grdaully discover you need to manually install various libraries as you install and use more packages. So far I've done:
+You'll gradually discover you need to manually install various libraries as you install and use more packages. So far I've done:
 
 ```sh
 sudo apt-get install libjpeg62
