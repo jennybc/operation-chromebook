@@ -140,3 +140,15 @@ sudo dpkg -i rstudio-1.1.299-amd64.deb
 ```
 
 Launch via `rstudio`.
+
+#### Ongoing maintenance
+
+January 2018 updates:
+
+  * after not using for a while, tried to launch via Ctrl+Alt+T, `shell`, `sudo startxfce4` but wow much error
+  * therefore, in that shell on Chrome side: `sudo sh ~/Downloads/crouton -u -n xenial` ... great deal of updating (on the order of an hour)
+  * now success with `sudo startxfce4`
+  * in shell on Ubuntu: `sudo apt-get update` (nothing needed to be done, apparently previous command accomplished?)
+  * Re-install RStudio daily (version has changed, of course) ... oops can't launch via `rstudio`
+  * `sudo apt-get install libnss3` ... now I can launch rstudio
+  * updated packages *en masse*
