@@ -1,5 +1,7 @@
 # operation-chromebook
 
+How I set up some Chromebooks for Minecraft and light R use.
+
 ### Hardware
 
   * HP Chromebook 11 G4 EE: Intel Celeron N2840 Dual Core, 11.6" Screen, 4GB RAM, 16GB Internal Storage. Bought for $210 CDN each at [Mike's Computer Shop](https://www.mikescomputershop.com/product/6961387).
@@ -122,7 +124,7 @@ sudo apt-mark hold libgstreamer0.10
 sudo apt-mark showhold
 ```
 
-You'll grdaully discover you need to manually install various libraries as you install and use more packages. So far I've done:
+You'll gradually discover you need to manually install various libraries as you install and use more packages. So far I've done:
 
 ```sh
 sudo apt-get install libjpeg62
@@ -130,6 +132,9 @@ sudo apt-get install libxslt1-dev
 sudo apt-get install libssl-dev
 sudo apt-get install libcurl4-openssl-dev
 sudo apt-get install libssh2-1-dev
+sudo apt-get install pandoc
+sudo apt-get install texlive-latex-base
+sudo apt-get install qpdf
 ```
 
 Download RStudio IDE daily build and install. This version number will be a moving target, so go to the [download page for the dailies](https://dailies.rstudio.com) to see what's the latest (just look at the line of buttons across the top).
